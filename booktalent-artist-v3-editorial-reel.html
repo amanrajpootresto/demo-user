@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piyush Gaur · Anchor & Emcee · BookTalent — Variant 3: Editorial Reel</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{--bg:#F7F4EE;--card:#FFFFFF;--line:#E9E2D4;--line-2:#F0EBE1;--ink:#211D18;--ink-2:#4A433A;--muted:#7B7266;
+--gold:#A47B2C;--gold-d:#8A6420;--gold-2:#C9A35A;--gold-soft:#F5EDDC;--green:#2F855A;--green-soft:#E8F4EC;
+--r:14px;--r-sm:10px;--sh:0 1px 2px rgba(33,29,24,.04),0 8px 24px -12px rgba(33,29,24,.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button,select{font:inherit;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.ic{flex:none;vertical-align:-3px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0;color:var(--ink)}
+h2{font-size:30px;margin-bottom:16px}h4{font-size:20px}
+h5{font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.eyebrow{font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+/* top bar */
+.topbar{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.topbar .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.logo{font:700 24px var(--serif);letter-spacing:-.02em}.logo b{color:var(--gold)}
+.topnav{display:flex;gap:22px;font-size:14px;color:var(--ink-2);margin-left:auto}.topnav a:hover{color:var(--gold)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;border:1px solid transparent;font-weight:600;font-size:14px;cursor:pointer;transition:.15s}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 6px 16px -8px rgba(164,123,44,.7)}.btn-gold:hover{background:var(--gold-d)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-d)}
+.btn-block{width:100%}.btn-lg{height:50px;font-size:15px}
+.iconbtn{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--ink-2)}
+.iconbtn.lg{width:42px;height:42px}.iconbtn:hover{border-color:var(--gold-2);color:var(--gold)}
+/* identity */
+.ident{display:flex;gap:18px;align-items:center}
+.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 1px var(--line),var(--sh)}
+.crumbs{font-size:12.5px;color:var(--muted);margin-bottom:4px}.crumbs a:hover{color:var(--gold)}
+.name{font-size:40px;line-height:1.05;display:flex;align-items:center;gap:8px}
+.verified{color:var(--gold);display:inline-flex}
+.sub{margin:6px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+.cat{color:var(--gold-d);font-weight:600}.dot{width:3px;height:3px;border-radius:50%;background:var(--line);background:#CFC6B6}
+.actions{display:flex;gap:8px}
+.resp{display:inline-flex;align-items:center;gap:6px;background:var(--green-soft);color:var(--green);font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:999px;white-space:nowrap}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
+.stat{padding:14px 18px;border-left:1px solid var(--line-2)}.stat:first-child{border-left:0}
+.stat strong{display:block;font:600 26px/1.1 var(--serif)}.stat span{font-size:12.5px;color:var(--muted)}
+/* tabs */
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs a{padding:14px 14px;font-size:14px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;display:flex;gap:6px;align-items:center}
+.tabs a:hover{color:var(--ink)}.tabs a.on{color:var(--ink);border-color:var(--gold)}
+.tabs em{font-style:normal;font-size:11px;background:var(--line-2);color:var(--muted);padding:1px 7px;border-radius:99px}
+.tabbar{position:sticky;top:64px;z-index:20;background:rgba(247,244,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+/* media */
+.tile{position:relative;margin:0;overflow:hidden;background:#E9E2D4;cursor:zoom-in}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s;color:transparent;font-size:0}.tile:hover img{transform:scale(1.04)}
+.play{position:absolute;inset:auto auto 12px 12px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.more{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+/* sections */
+.sec{padding:36px 0;border-bottom:1px solid var(--line)}.sec:last-child{border-bottom:0}
+.lead{font-size:16.5px;line-height:1.7;color:var(--ink-2);margin:0 0 16px;max-width:68ch}
+.quote{max-width:68ch;margin:0 0 24px;padding:14px 18px;border-left:3px solid var(--gold-2);background:var(--gold-soft);border-radius:0 var(--r-sm) var(--r-sm) 0;font:italic 500 18px/1.55 var(--serif);color:var(--ink-2)}
+.facts{display:grid;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:5px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink-2)}
+.ig{margin-top:22px;display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:#fff;max-width:380px}
+.ig .ic:first-child{color:var(--gold)}.ig span{flex:1;display:flex;flex-direction:column;line-height:1.3}.ig em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.ig:hover{border-color:var(--gold-2)}
+/* kv */
+.kvs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0}
+.kv{padding:10px 0;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:2px;padding-right:16px}
+.kv-wide{grid-column:1/-1}.kv dt{font-size:12px;color:var(--muted)}.kv dd{margin:0;font-weight:500;color:var(--ink);font-size:14px}
+.kv-wide dd{font-weight:400;color:var(--ink-2);font-size:13.5px;line-height:1.55}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dgroup{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px 8px}
+.dgroup h4{display:flex;align-items:center;gap:8px;font-size:19px;margin-bottom:6px}.dgroup h4 .ic{color:var(--gold)}
+/* accordion */
+.acc{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+.acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:16px 18px;font-weight:600}
+.acc summary::-webkit-details-marker{display:none}.acc summary .ic{color:var(--gold)}
+.acc summary span{flex:1;font:600 19px var(--serif)}.acc summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:400}
+.acc .acc-chev{color:var(--muted);transition:.2s}.acc[open] .acc-chev{transform:rotate(90deg)}
+.acc .kvs{padding:0 18px 10px}
+/* css tabs */
+.dtabs input{display:none}.dtab-labels{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.dtab-labels label{display:inline-flex;gap:6px;align-items:center;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13.5px;font-weight:500;color:var(--ink-2)}
+.dpane{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:8px 22px}
+.dpane .kvs{grid-template-columns:repeat(3,1fr)}
+#dt0:checked~.dtab-labels label[for=dt0]{background:var(--ink);color:#fff;border-color:var(--ink)}#dt0:checked~.dpanes .dpane:nth-child(1){display:block}#dt1:checked~.dtab-labels label[for=dt1]{background:var(--ink);color:#fff;border-color:var(--ink)}#dt1:checked~.dpanes .dpane:nth-child(2){display:block}#dt2:checked~.dtab-labels label[for=dt2]{background:var(--ink);color:#fff;border-color:var(--ink)}#dt2:checked~.dpanes .dpane:nth-child(3){display:block}#dt3:checked~.dtab-labels label[for=dt3]{background:var(--ink);color:#fff;border-color:var(--ink)}#dt3:checked~.dpanes .dpane:nth-child(4){display:block}#dt4:checked~.dtab-labels label[for=dt4]{background:var(--ink);color:#fff;border-color:var(--ink)}#dt4:checked~.dpanes .dpane:nth-child(5){display:block}#dt5:checked~.dtab-labels label[for=dt5]{background:var(--ink);color:#fff;border-color:var(--ink)}#dt5:checked~.dpanes .dpane:nth-child(6){display:block}
+/* package */
+.pkg{position:relative;background:#fff;border:1.5px solid var(--gold-2);border-radius:var(--r);padding:26px 24px 22px;box-shadow:0 18px 40px -26px rgba(164,123,44,.55)}
+.pkg-badge{position:absolute;top:-11px;left:22px;background:var(--gold);color:#fff;font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.pkg-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding-bottom:16px;border-bottom:1px solid var(--line-2);margin-bottom:14px}
+.pkg h4{font-size:23px}.pkg-meta{margin:4px 0 0;font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.pkg-price{text-align:right}.pkg-price strong{display:block;font:600 30px/1 var(--serif);color:var(--gold-d)}.pkg-price span{font-size:12px;color:var(--muted)}
+.ticks{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:9px}
+.ticks li{display:flex;gap:10px;font-size:14px;color:var(--ink-2)}.ticks .ic{color:var(--gold);margin-top:3px}
+/* booking */
+.book{padding:22px;display:flex;flex-direction:column;gap:12px}
+.book-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:4px}
+.book-price{font:600 34px/1.1 var(--serif);color:var(--ink);margin-top:6px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink-2)}
+.field select,.fake-input{height:46px;border:1px solid var(--line);border-radius:var(--r-sm);padding:0 14px;background:#fff;font-weight:400;font-size:14px}
+.fake-input{display:flex;align-items:center;gap:8px;color:var(--muted);cursor:pointer}
+.trust{list-style:none;padding:12px 0 0;margin:4px 0 0;border-top:1px solid var(--line-2);display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
+.trust li{display:flex;gap:8px;align-items:center}.trust .ic{color:var(--green)}
+/* calendar */
+.cal{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.cal-top strong{font:600 20px var(--serif)}
+.cal-head,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-head span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:center;padding-bottom:4px}
+.day{aspect-ratio:1/.8;border:1px solid var(--line-2);background:#fff;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;position:relative}
+.day:hover:not(.past):not(.blank){border-color:var(--gold-2);background:var(--gold-soft)}
+.day.past{color:#C9C1B4;background:transparent;border-color:transparent;cursor:default}
+.day.today{border-color:var(--gold);color:var(--gold-d);font-weight:700}
+.day.today::after{content:"";position:absolute;bottom:6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--gold)}
+.day.blank{border:0;background:transparent}
+.legend{display:flex;gap:16px;margin-top:14px;font-size:12px;color:var(--muted)}.legend span{display:flex;align-items:center;gap:6px}
+.lg{width:9px;height:9px;border-radius:50%;display:inline-block}.lg.av{background:#fff;border:1.5px solid #9CC9AE}.lg.bk{background:#E3A7A0}.lg.td{background:var(--gold)}
+/* empty */
+.empty{text-align:center;padding:36px 24px;border:1px dashed #DCD3C3;border-radius:var(--r);background:#fff}
+.empty-ic{width:52px;height:52px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:var(--gold-soft);color:var(--gold)}
+.empty h4{font-size:22px}.empty p{color:var(--muted);max-width:46ch;margin:6px auto 18px;font-size:14px}
+.foot{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
+.vlabel{position:fixed;left:16px;bottom:16px;z-index:50;background:var(--ink);color:#fff;font-size:12px;padding:8px 12px;border-radius:999px;letter-spacing:.02em}
+@media (max-width:900px){.name{font-size:32px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line-2)}.dgrid{grid-template-columns:1fr}.dpane .kvs{grid-template-columns:1fr 1fr}.topnav{display:none}}
+
+.reel{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px max(24px,calc((100vw - 1152px)/2)) 4px;scroll-padding-left:max(24px,calc((100vw - 1152px)/2));scrollbar-width:none}
+.reel .tile{flex:0 0 auto;width:300px;height:420px;border-radius:16px;scroll-snap-align:start}
+.reel .tile:first-child{width:560px}
+.reel-bar{max-width:1200px;margin:10px auto 0;padding:0 24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+.reel-bar .ctrl{display:flex;gap:8px}
+.mast{text-align:center;padding:44px 24px 10px}
+.mast .avatar{margin:0 auto 14px;width:72px;height:72px}
+.mast .crumbs{justify-content:center}
+.mast .name{justify-content:center;font-size:64px;font-weight:600}
+.mast .sub{justify-content:center}
+.mast .row{display:flex;justify-content:center;gap:10px;margin-top:20px;align-items:center}
+.ruled{display:flex;justify-content:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:32px auto 0;max-width:900px}
+.ruled .stat{border-left:1px solid var(--line);text-align:center;padding:18px 34px;flex:1}.ruled .stat:first-child{border-left:0}
+.ruled .stat strong{font-size:34px}
+.ed{display:grid;grid-template-columns:240px minmax(0,1fr) 340px;gap:44px;align-items:start;margin-top:12px}
+.toc{position:sticky;top:96px;padding-top:36px}
+.toc a{display:block;padding:8px 0 8px 14px;border-left:2px solid var(--line);font-size:14px;color:var(--muted)}.toc a.on,.toc a:hover{color:var(--ink);border-color:var(--gold)}
+.ed aside{position:sticky;top:96px;margin-top:36px}
+.sec h2{font-size:36px}.sec h2::before{content:attr(data-n);display:block;font:600 11px var(--sans);letter-spacing:.14em;color:var(--gold);margin-bottom:6px}
+.facts{grid-template-columns:1fr}
+@media(max-width:1100px){.ed{grid-template-columns:minmax(0,1fr) 320px}.toc{display:none}}
+@media(max-width:900px){.ed{grid-template-columns:1fr}.ed aside{position:static}.mast .name{font-size:44px}.reel .tile{width:240px;height:320px}.reel .tile:first-child{width:300px}.ruled{flex-wrap:wrap}.ruled .stat{flex:1 1 50%;padding:14px}}
+</style></head>
+<body><header class="topbar"><div class="wrap"><a class="logo" href="#">Book<b>Talent</b></a>
+<nav class="topnav"><a href="#">Browse artists</a><a href="#">How it works</a><a href="#">For artists</a><a href="#">Sign in</a></nav>
+<button class="btn btn-gold" style="height:38px">Post an event</button></div></header><section id="media"><div class="reel"><figure class="tile"><img src="https://picsum.photos/seed/bt-wedding/900/1200" alt="Piyush Gaur at a wedding event" loading="lazy"></figure><figure class="tile"><img src="https://picsum.photos/seed/bt-stage/900/1200" alt="Piyush Gaur at a stage event" loading="lazy"><span class="play"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></figure><figure class="tile"><img src="https://picsum.photos/seed/bt-sangeet/900/1200" alt="Piyush Gaur at a sangeet event" loading="lazy"></figure><figure class="tile"><img src="https://picsum.photos/seed/bt-lights/900/1200" alt="Piyush Gaur at a lights event" loading="lazy"></figure><figure class="tile"><img src="https://picsum.photos/seed/bt-crowd/900/1200" alt="Piyush Gaur at a crowd event" loading="lazy"><span class="play"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></figure><figure class="tile"><img src="https://picsum.photos/seed/bt-haldi/900/1200" alt="Piyush Gaur at a haldi event" loading="lazy"></figure></div>
+<div class="reel-bar"><span><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> 6 photos & videos · scroll to explore</span><div class="ctrl"><button class="iconbtn" aria-label="Previous"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button class="iconbtn" aria-label="Next"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div></div></section>
+<header class="mast"><img class="avatar" style="color:transparent;background:#E9E2D4" src="https://picsum.photos/seed/bt-avatar/200/200" alt=""><span class="eyebrow">Anchor & Emcee · Mumbai</span>
+  <h1 class="name">Piyush Gaur <span class="verified"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 1.8 3-.2.9 2.9 2.5 1.7-1 2.8 1 2.8-2.5 1.7-.9 2.9-3-.2L12 22l-2.4-1.8-3 .2-.9-2.9L3.2 15.8l1-2.8-1-2.8 2.5-1.7.9-2.9 3 .2z" fill="currentColor" stroke="none"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#fff"/></svg></span></h1>
+  <p class="sub">Luxury weddings, sangeets & corporate stages — in eight languages</p>
+  <div class="row"><span class="resp"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Responds in ~2 hrs</span><div class="actions"><button class="iconbtn lg" aria-label="Share"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg></button><button class="iconbtn lg" aria-label="Save"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.6-9 9-9 9z"/></svg></button></div></div>
+  <div class="ruled"><div class="stat"><strong>15</strong><span>Events performed</span></div><div class="stat"><strong>15+</strong><span>Years on stage</span></div><div class="stat"><strong>13K</strong><span>Instagram followers</span></div><div class="stat"><strong>~2 hrs</strong><span>Response time</span></div></div>
+</header>
+<div class="wrap ed"><nav class="toc"><a href="#media" class="">Media</a><a href="#about" class="on">About</a><a href="#packages" class="">Packages</a><a href="#details" class="">Details</a><a href="#availability" class="">Availability</a><a href="#reviews" class="">Reviews</a></nav><div>
+  <section id="about" class="sec "><h2 data-n="01">About</h2>
+  <p class="lead">Piyush Gaur is a luxury wedding anchor and emcee with 15+ years on stage, hosting weddings and events across India, Dubai, Abu Dhabi, Moscow, Saint Petersburg, Nepal, Bangkok, Pattaya, Phuket and Chiang Mai. He hosts in Hindi, English, Punjabi, Gujarati, Marwari, Sindhi, Marathi and Tamil.</p><blockquote class="quote">“I believe weddings are meant to be enjoyed without unnecessary time restrictions. If a function scheduled for 10 AM starts in the afternoon, or one planned to end at 2 PM runs till 4 PM, I don't mind. Whether it's the Haldi, Sangeet or Baraat, even if the schedule slips, I'm happy to accommodate — so you and your guests enjoy every moment without feeling rushed.”</blockquote>
+  <div class="facts">
+    <div><h5>Languages</h5><div class="chips"><span class="chip">Hindi</span><span class="chip">English</span><span class="chip">Punjabi</span><span class="chip">Gujarati</span><span class="chip">Marathi</span><span class="chip">Tamil</span><span class="chip">Marwari</span><span class="chip">Sindhi</span></div></div>
+    <div><h5>Genres</h5><div class="chips"><span class="chip">Wedding Entertainment</span><span class="chip">Bollywood</span><span class="chip">Indian Pop</span><span class="chip">Live Entertainment</span><span class="chip">Interactive Comedy</span><span class="chip">Corporate Hosting</span><span class="chip">Party Entertainment</span><span class="chip">Celebrity Hosting</span><span class="chip">Audience Engagement</span></div></div>
+    <div><h5>Event types</h5><div class="chips"><span class="chip">Wedding</span><span class="chip">Reception</span><span class="chip">Sangeet</span><span class="chip">Birthday</span><span class="chip">Corporate</span><span class="chip">College Fest</span><span class="chip">School</span><span class="chip">Government</span><span class="chip">Religious</span><span class="chip">Festival</span><span class="chip">Private Party</span><span class="chip">Club</span><span class="chip">Luxury Event</span><span class="chip">Brand Launch</span></div></div>
+  </div>
+  <a class="ig" href="#"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span><strong>@piyushgaurofficial</strong><em>13K followers on Instagram</em></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+</section>
+  <section id="packages" class="sec"><h2 data-n="02">Packages</h2><article class="pkg">
+  <span class="pkg-badge">Most popular</span>
+  <div class="pkg-top"><div><h4>Shaadi Season Exclusive</h4><p class="pkg-meta"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 4 hours · Wedding functions</p></div>
+  <div class="pkg-price"><strong>₹51,000</strong><span>per event</span></div></div>
+  <ul class="ticks"><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Professional wedding anchor — RJ Piyush Gaur</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Up to 4 hours of wedding entertainment & hosting</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Interactive wedding games & fun activities</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Guest interaction & crowd management</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Haldi, Sangeet, Cocktail or Wedding celebration hosting</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Customised entertainment to your wedding theme</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Special couple introduction & family engagement</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Travel & accommodation as per package terms</li></ul>
+  <button class="btn btn-gold btn-block">Select package</button>
+</article></section>
+  <section id="details" class="sec"><h2 data-n="03">Event details</h2><details class="acc" open><summary><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 13.5L3 11l1.5-1.5 8 1L17 6a2 2 0 013 3l-4.5 4.5 1 8L15 23l-2.5-7.5"/></svg><span>Travel</span><em>8 items</em><svg class="ic acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary><dl class="kvs"><div class="kv"><dt>Travel modes</dt><dd>Flight · Train · Cab · Personal vehicle</dd></div><div class="kv"><dt>Flight class</dt><dd>Premium Economy</dd></div><div class="kv"><dt>Train class</dt><dd>2AC</dd></div><div class="kv"><dt>Hotel category</dt><dd>4-star</dd></div><div class="kv"><dt>Accommodation</dt><dd>Always required</dd></div><div class="kv"><dt>Travel party</dt><dd>Travels solo</dd></div><div class="kv"><dt>Travel cost</dt><dd>Included in package</dd></div><div class="kv kv-wide"><dt>Note</dt><dd>Round-trip travel, local transfers and a 4★/5★ stay are agreed with the client before booking, unless included in the package.</dd></div></dl></details><details class="acc"><summary><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg><span>Hospitality</span><em>2 items</em><svg class="ic acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary><dl class="kvs"><div class="kv"><dt>Green room</dt><dd>AC room</dd></div><div class="kv"><dt>Refreshments</dt><dd>Mineral water · Tea · Coffee · Snacks · Vegetarian meal</dd></div></dl></details><details class="acc"><summary><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg><span>Performance</span><em>5 items</em><svg class="ic acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary><dl class="kvs"><div class="kv"><dt>Arrives before show</dt><dd>60 min</dd></div><div class="kv"><dt>Max continuous set</dt><dd>2 hours</dd></div><div class="kv"><dt>Script customisation</dt><dd>Yes</dd></div><div class="kv"><dt>Teleprompter</dt><dd>Not required</dd></div><div class="kv"><dt>Events hosted</dt><dd>Wedding · Corporate · College · Awards · Government</dd></div></dl></details><details class="acc"><summary><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span>Commercial</span><em>4 items</em><svg class="ic acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary><dl class="kvs"><div class="kv"><dt>Minimum package</dt><dd>₹51,000</dd></div><div class="kv"><dt>Extra hour</dt><dd>₹1,11,000</dd></div><div class="kv"><dt>Waiting charges</dt><dd>₹5,000 / hr</dd></div><div class="kv"><dt>Late-night charges</dt><dd>None</dd></div></dl></details><details class="acc"><summary><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Legal & media</span><em>4 items</em><svg class="ic acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary><dl class="kvs"><div class="kv"><dt>Signs NDA</dt><dd>Yes</dd></div><div class="kv"><dt>Video recording</dt><dd>Allowed</dd></div><div class="kv"><dt>Livestreaming</dt><dd>Allowed</dd></div><div class="kv"><dt>Promotional use of photos</dt><dd>With permission</dd></div></dl></details><details class="acc"><summary><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Technical</span><em>3 items</em><svg class="ic acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary><dl class="kvs"><div class="kv"><dt>Wireless microphones</dt><dd>Required</dd></div><div class="kv"><dt>Est. tech setup cost</dt><dd>₹30,000</dd></div><div class="kv kv-wide"><dt>Sound system</dt><dd>RCF / JBL / HARMAN with Shure or Sennheiser wireless mics, scaled to venue. LED screens and extra lighting may cost extra.</dd></div></dl></details></section>
+  <section id="availability" class="sec"><h2 data-n="04">Availability</h2><div class="cal">
+  <div class="cal-top"><button class="iconbtn" aria-label="Previous month"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><strong>November 2026</strong><button class="iconbtn" aria-label="Next month"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
+  <div class="cal-head"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div><div class="cal-grid"><button class="day past" disabled>1</button><button class="day past" disabled>2</button><button class="day past" disabled>3</button><button class="day past" disabled>4</button><button class="day past" disabled>5</button><button class="day past" disabled>6</button><button class="day past" disabled>7</button><button class="day past" disabled>8</button><button class="day past" disabled>9</button><button class="day past" disabled>10</button><button class="day past" disabled>11</button><button class="day past" disabled>12</button><button class="day today">13</button><button class="day ">14</button><button class="day ">15</button><button class="day ">16</button><button class="day ">17</button><button class="day ">18</button><button class="day ">19</button><button class="day ">20</button><button class="day ">21</button><button class="day ">22</button><button class="day ">23</button><button class="day ">24</button><button class="day ">25</button><button class="day ">26</button><button class="day ">27</button><button class="day ">28</button><button class="day ">29</button><button class="day ">30</button><span class="day blank"></span><span class="day blank"></span><span class="day blank"></span><span class="day blank"></span><span class="day blank"></span></div>
+  <div class="legend"><span><i class="lg av"></i>Available</span><span><i class="lg bk"></i>Booked</span><span><i class="lg td"></i>Today</span></div>
+</div></section>
+  <section id="reviews" class="sec"><h2 data-n="05">Reviews</h2><div class="empty">
+  <div class="empty-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div>
+  <h4>No reviews yet</h4><p>Booked Piyush before? Your review helps other hosts plan with confidence. All reviews are checked by BookTalent before they appear.</p>
+  <button class="btn btn-ghost">Sign in to write a review</button>
+</div></section>
+</div><aside class="book card">
+  <div class="book-head"><div><span class="eyebrow">Starting from</span><div class="book-price">₹51,000</div></div><span class="resp"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Replies in ~2 hrs</span></div>
+  <label class="field"><span>Package</span><select><option>Shaadi Season Exclusive · ₹51,000</option></select></label>
+  <label class="field"><span>Event date</span><div class="fake-input"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Choose a date</div></label>
+  <button class="btn btn-gold btn-block btn-lg">Check availability</button>
+  <button class="btn btn-ghost btn-block">Send an enquiry</button>
+  <ul class="trust"><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Payments protected by BookTalent</li><li><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg> No charge until the artist confirms</li></ul>
+</aside></div><footer class="foot">© BookTalent · Variant 3 — Editorial Reel</footer><div class="vlabel">V3 · Editorial Reel</div></body></html>
